@@ -30,25 +30,26 @@ void search(struct link *s, int item)
         //         loc = loc + 1;
         //         s = s->next;
         //     }
-        ///in sorted list
-        if((s->info) > item)
-        {  
-            //loc = NULL;
+        /// in sorted list
+        if ((s->info) > item)
+        {
+            // loc = NULL;
             printf("ELEMENT NOT FOUND.");
             break;
         }
-        else if(s->info == item)
+        else if (s->info == item)
         {
-               printf("%d found at %d position.\n", item, loc+1);
-               break;
+            printf("%d found at %d position.\n", item, loc + 1);
+            break;
         }
-        else if((s->info) < item)
+        else if ((s->info) < item)
         {
-             loc = loc + 1;
-             s = s->next;
+            loc = loc + 1;
+            s = s->next;
         }
-      }printf("location = %d",loc);
-      }
+    }
+    printf("location = %d", loc);
+}
 int main()
 {
     struct link *first;
@@ -76,7 +77,6 @@ int main()
 
     traversi(first);
     search(first, 22);
-   
 
     return 0;
 }
