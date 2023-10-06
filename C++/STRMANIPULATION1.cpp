@@ -23,7 +23,8 @@ class str
         p = new char[len +1];             //dynamic allocation
         strcpy(p,s1.p);
      }
-     ~str (){delete p;}  
+     //~str (){delete p;} 
+     
      friend str operator+(str &,str &); //operator overloading
      friend void operator<=(str &,str &);//operator overloading
 
@@ -31,6 +32,7 @@ class str
      {
        cout<<s.p<<endl;
      }
+     
 };
 str operator+(str &s2 , str &s3)
 {
