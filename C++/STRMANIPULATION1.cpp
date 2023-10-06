@@ -23,18 +23,18 @@ class str
         p = new char[len +1];             //dynamic allocation
         strcpy(p,s1.p);
      }
-     //~str (){delete p;} 
+     
      
      friend str operator+(str &,str &); //operator overloading
      friend void operator<=(str &,str &);//operator overloading
 
-     void display(str s)
+     void display()
      {
-       cout<<s.p<<endl;
+       cout<<p<<endl;
      }
-     
+     //~str(){delete p;}
 };
-str operator+(str &s2 , str &s3)
+str operator +(str &s2 , str &s3)
 {
     str temp;
     temp.len = s2.len + s3.len;
@@ -43,7 +43,7 @@ str operator+(str &s2 , str &s3)
     strcat(temp.p,s3.p);
     return temp;
 }
-void operator<=(str &s4,str &s5)
+void operator <=(str &s4,str &s5)
 {
    if(s4.len == s5.len)
    cout<<"STRINGS ARE EQUAL.\n";
@@ -54,25 +54,25 @@ void operator<=(str &s4,str &s5)
 }
 int main()
 {
-     char x[] = "DEVANSH";
-     char y[] = "PRAKU";
-     str t1(x),t2(t1),t3(y),t4(t3),t5,t6,t7,t8,t9;
-     t9.display(t1);
-     t9.display(t2);
-     t9.display(t3);
-     t9.display(t4);
+     char x[] = "GARG";
+     char y[] = "PRAKARTI";
+     str t1(x),t2(t1),t3(y),t4(t3),t5,t6,t7,t8;
+     t1.display();
+     t2.display();
+     t3.display();
+     t4.display();
 
     t5 = t1 + t3;
-         t9.display(t5);
+         t5.display();
 
     t6 = t2 + t4;
-         t9.display(t6);
+         t6.display();
 
     t7 = t1 + t2;   
-      t9.display(t7);
+      t7.display();
 
     t8 = t3 + t4;
-     t9.display(t8);
+     t8.display();
    
     t1 <= t3;
     t1 <= t2;

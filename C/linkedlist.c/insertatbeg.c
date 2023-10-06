@@ -40,12 +40,12 @@ int main(){
     third->next = fourth;
 
     fourth->info = 55;
-    fourth->next = fifth;
+    fourth->next = NULL;
     
     fifth->info = 40;
-    fifth->next =NULL;
+    fifth->next =first;
     
-    traversi(first);
+    traversi(fifth);
 
     return 0;
 }
