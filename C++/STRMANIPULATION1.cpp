@@ -77,8 +77,5 @@ int main()
     t1 <= t3;
     t1 <= t2;
 
-     
-
-    
     return 0 ;
 }

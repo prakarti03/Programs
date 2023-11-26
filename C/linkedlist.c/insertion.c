@@ -38,12 +38,12 @@ struct link * insertinbet(struct link *head,int i,int data)
    }
    struct link *temp = head;
    int count = 0;
-   while(temp != NULL && count < i-2)  
+   while(temp -> next != NULL && count < i-2)  
     { 
       temp = temp ->next;
       count ++;
     }
-    if(temp != NULL )
+    if(temp->next != NULL )
     {
       newnode -> next = temp -> next;
       temp -> next = newnode;
@@ -104,11 +104,11 @@ int main(){
     first = insertinbet(first,loc,data);
     traversi(first);
 
-    int N;
-    printf("Enter data to insert at end:\n");
-    scanf("%d",&N);
-    first = insertatend(first,N);
-    traversi(first);
+    // int N;
+    // printf("Enter data to insert at end:\n");
+    // scanf("%d",&N);
+    // first = insertatend(first,N);
+    // traversi(first);
 
     return 0;
 }

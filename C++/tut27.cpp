@@ -17,6 +17,19 @@ class str
         name = new char[len + 1];
         strcpy(name,x);
       }
+      ~str()   //destuctor will be automatically called at end
+      {
+        cout<<"DELETED";
+      }
+       str(str & i,str & j) //dynamic allocation copy constructor
+       {
+         len = i.len + j.len;
+         delete name;
+         name = new char[len + 1 ];
+
+         strcpy(name , i.name);
+         strcat(name , j.name);
+       }
       void show()
       {
         cout<<name<<endl;
@@ -26,12 +39,13 @@ class str
 int main(){
     //char t[] = "SOFTWARE";
     char *first = "soft";
-    str s1(first);
-    str s2("DEV");
-    str s3("prakarti"); //wrong output
-    
+    str s1(first), s2("DEV"), s3("prakarti"); //wrong output
+    str s4(s1 , s2),s5(s4,s3);
+
     s1.show();
     s2.show();
     s3.show();
+    s4.show();
+    s5.show();
     return 0 ;
 }
