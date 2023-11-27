@@ -27,8 +27,8 @@ void time::sum(time t1,time t2){
 }
 int main(){
     time t1,t2,t3;
-    t1.gettime(7,56);
-    t2.gettime(8,12);
+    t1.gettime(17,45);
+    t2.gettime(2,35);
 
     t3.sum(t1,t2);
     t1.puttime();

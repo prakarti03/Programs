@@ -8,7 +8,6 @@ class shop
     int itemid[100];
     int itemprice[100];
     string itemname[100];
- 
 
 public:
    int counter;
@@ -23,7 +22,7 @@ void shop::setprice(void)
     {
         cout << "enter the " << i + 1 <<" item id:"<< endl;
         cin >> itemid[i];
-        cout << "enter the " << i + 1 <<" item price:"<< endl;
+        cout << "enter the " << i + 1 <<" item price:\nRs.";
         cin>>itemprice[i];
         cout << "enter the " << i + 1 <<"item name:"<< endl;
         cin>>itemname[i];
