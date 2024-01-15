@@ -38,7 +38,7 @@ struct link * insertinbet(struct link *head,int i,int data)
    }
    struct link *temp = head;
    int count = 0;
-   while(temp -> next != NULL && count < i-2)  
+   while(temp -> next != NULL && count < i-1)  
     { 
       temp = temp ->next;
       count ++;

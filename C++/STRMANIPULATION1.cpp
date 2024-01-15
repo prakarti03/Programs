@@ -23,7 +23,9 @@ class str
         p = new char[len +1];             //dynamic allocation
         strcpy(p,s1.p);
      }
-     
+     ~str(){
+      cout<<"DELETED";
+     }
      
      friend str operator+(str &,str &); //operator overloading
      friend void operator<=(str &,str &);//operator overloading

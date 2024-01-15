@@ -48,7 +48,16 @@ struct link *del_val(struct link *first, int value)
 {
     struct link *p = first;
     struct link *q = first->next;
+    struct link *temp;
 
+    if (p->info == value)
+    {
+        temp = first;
+        first = first->next;
+        free(temp);
+
+        return first;
+    }
     while (q->info != value && q->next != NULL)
     {
         p = p->next;

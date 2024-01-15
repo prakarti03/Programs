@@ -48,7 +48,7 @@ void search(struct link *s, int item)
             s = s->next;
         }
     }
-    printf("location = %d", loc);
+    //printf("location = %d", loc);
 }
 int main()
 {

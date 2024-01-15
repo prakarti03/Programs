@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.ejs": "html",
+        "TAKEINPUT1.C": "cpp"
+    }
+}
