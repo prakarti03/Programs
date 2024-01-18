@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "node.h"
 
+//creation of linked list
 node *takeinput(node *head, node *tail)
 {
     int da;
@@ -21,21 +22,13 @@ node *takeinput(node *head, node *tail)
         {
             tail->next = newnode;
             tail = tail->next;
-            //   OR
-            // tail = newnode
-            /* node *temp = (node *)malloc(sizeof(node));
-             temp = head;
-             while (temp->next != NULL)
-             {
-                 temp = temp->next;
-             }
-             temp->next = newnode;*/
         }
         printf("Enter data:");
         scanf("%d", &da);
     }
     return head;
 }
+//traverse linked list
 void print(node *first)
 {
     while (first != NULL)

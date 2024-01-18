@@ -1,78 +1,103 @@
 #include <stdio.h>
-#include <stdlib.h>
+#define capacity 4
 
 int nextindex = 0;
+int arr[capacity];
 
-struct stack
-{
-    int capacity;
-    int arr[4];
-
-} s1;
 // return no. of elements present in my stack
 void size()
 {
     printf("TOTAL ELEMENTS PRESENT IN STACK IS %d\n", nextindex);
 }
+// to check if the stack is empty or full
 int isempty()
 {
     if (nextindex == 0)
         return 1;
-    else 
+    else
         return 0;
 }
 // to insert an element
-void push(int element)
+void push()
 {
-    if (nextindex == s1.capacity)
+    int element, n;
+    printf("Enter the total no. of elements to insert:\n");
+    scanf("%d", &n);
+
+    for (int i = 0; i < n; i++)
     {
-        printf("Stack full.\n");
-        return;
+        if (nextindex == capacity)
+        {
+            printf("Stack full.\n");
+            return;
+        }
+        printf("Enter the element to insert:\n");
+        scanf("%d", &element);
+        arr[nextindex] = element;
+        nextindex++;
     }
-    s1.arr[nextindex] = element;
-    nextindex++;
 }
 // to delete element
-int pop()
+void pop()
 {
     if (isempty())
     {
         printf("Stack Empty.\n");
-        return 1;
     }
-    nextindex--;
-    printf("%d\n", s1.arr[nextindex]);
+    else
+    {
+        nextindex--;
+        printf("The element popped is %d\n", arr[nextindex]);
+    }
 }
-// to acces the top elements of stack
-int top()
+
+// to access the top element of stack
+void peek()
 {
     if (isempty())
     {
         printf("Stack Empty.\n");
-        return 1;
     }
-    printf("%d\n", s1.arr[nextindex - 1]);
+    else
+        printf("The TOPMOST element in stack is %d\n", arr[nextindex - 1]);
 }
-int main()
+// to access all the elements of the stack
+void traverse()
 {
-    // int s;
-    // printf("Enter the size of array: \n");
-    // scanf("%d",&s);
-    s1.capacity = 4;
-    // s1.arr[4];
-    push(10);
-    push(20);
-    push(30);
-    push(40);
-    push(50);
-    printf("%d\n", isempty());
-    size();
-    top();
-    pop();
-    pop();
-    pop();
-    pop();
-    pop();
-    top();
-    return 0;
+    if (isempty())
+    {
+        printf("Stack Empty.\n");
+    }
+    for (int i = nextindex-1; i >= 0; i--)
+    {
+        printf("Element: %d\n", arr[i]);
+    }
+}
+void main()
+{
+    int choice;
+    do
+    {
+        printf("Press 1 for PUSH():\nPress 2 for POP():\nPress 3 for PEEK():\nPress 4 for TRAVERSE():\n");
+        scanf("%d", &choice);
+        switch(choice)
+        {
+            case 1:
+                push();
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                peek();
+                break;
+            case 4:
+                traverse();
+                break;
+            default:
+               printf("INVALID CHOICE.\n");
+               break;
+        }
+
+    } while (choice != 0);
 }
