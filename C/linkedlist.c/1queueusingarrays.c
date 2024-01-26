@@ -70,7 +70,7 @@ int main()
    
      while (choice != 0)
     {
-        printf("Press 1 for insert():\nPress 2 for delete():\nPress 3 for front() element:\nPress 4 for Traverse():\n");
+        printf("Press 1 for enqueue():\nPress 2 for dequeue():\nPress 3 for front() element:\nPress 4 for Traverse():\n");
         scanf("%d", &choice);
          if(choice == 0 ||choice == 1 ||choice == 2 ||choice == 3 ||choice == 4 )
         { 
