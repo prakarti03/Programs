@@ -1,23 +1,15 @@
-#include <stdio.h>
-#define capacity 4
+#include<stdio.h>
+#include<stdlib.h>
+#include "node.h"
 
-int nextindex = 0;
-int arr[capacity];
-
-// return no. of elements present in my stack
-void size()
-{
-    printf("TOTAL ELEMENTS PRESENT IN STACK IS %d\n", nextindex);
-}
-// to check if the stack is empty or full
+node *top = NULL;
 int isempty()
 {
-    if (nextindex == 0)
+    if (top == 0)
         return 1;
     else
         return 0;
 }
-// to insert an element
 void push()
 {
     int element, n;
@@ -26,32 +18,28 @@ void push()
 
     for (int i = 0; i < n; i++)
     {
-        if (nextindex == capacity)
-        {
-            printf("Stack full.\n");
-            return;
-        }
-        printf("Enter the element to insert:\n");
-        scanf("%d", &element);
-        arr[nextindex] = element;
-        nextindex++;
-    }
-}
-// to delete element
+      int element;
+      printf("Enter the element to insert:\n");
+      scanf("%d",&element);
+      node *newnode = (node*)malloc(sizeof(node));
+      newnode->info = element;
+      newnode->next = top;
+      top = newnode;
+}}
 void pop()
 {
     if (isempty())
     {
-        printf("Stack Empty.\n");
+        printf("STACK UNDERFLOW.\n");
     }
-    else
-    {
-        nextindex--;
-        printf("The element popped is %d\n", arr[nextindex]);
+    else{
+    node *newnode = (node*)malloc(sizeof(node));
+    newnode = top;
+    top = top->next;
+    printf("The Popped element is %d\n",newnode->info);     
+    free(newnode);
     }
 }
-
-// to access the top element of stack
 void peek()
 {
     if (isempty())
@@ -59,18 +47,22 @@ void peek()
         printf("Stack Empty.\n");
     }
     else
-        printf("The TOPMOST element in stack is %d\n", arr[nextindex - 1]);
+        printf("The TOPMOST element in stack is %d\n", top->info);
 }
-// to access all the elements of the stack
 void traverse()
 {
     if (isempty())
     {
         printf("Stack Empty.\n");
     }
-    for (int i = nextindex-1; i >= 0; i--)
+     else
     {
-        printf("Element: %d\n", arr[i]);
+        node *first = top;
+        while(first != NULL)
+        {
+            printf("Element: %d\n",first->info);
+          first = first->next;
+          }
     }
 }
 void main()

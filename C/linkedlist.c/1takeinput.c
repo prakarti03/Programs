@@ -11,7 +11,7 @@ node *takeinput(node *head, node *tail)
     while (da != -1)
     {
         node *newnode = (node *)malloc(sizeof(node));
-        newnode->data = da;
+        newnode->info = da;
         newnode->next = NULL;
         if (head == NULL)
         {
@@ -23,7 +23,7 @@ node *takeinput(node *head, node *tail)
             tail->next = newnode;
             tail = tail->next;
         }
-        printf("Enter data:");
+        printf("Enter data: \n");
         scanf("%d", &da);
     }
     return head;
@@ -33,7 +33,7 @@ void print(node *first)
 {
     while (first != NULL)
     {
-        printf("%d ", first->data);
+        printf("%d ", first->info);
         first = first->next;
     }
 }

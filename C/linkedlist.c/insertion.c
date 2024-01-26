@@ -1,13 +1,33 @@
 #include<stdio.h>
 #include<stdlib.h> 
+#include "node.h"
 
-struct link
+node *takeinput(node *head, node *tail)
 {
-     int info;
-     struct link *next;
-};
-
-void traversi(struct link *trav)
+    int da;
+    printf("enter data: \n");
+    scanf("%d", &da);
+    while (da != -1)
+    {
+        node *newnode = (node *)malloc(sizeof(node));
+        newnode->info = da;
+        newnode->next = NULL;
+        if (head == NULL)
+        {
+            head = newnode;
+            tail = newnode;
+        }
+        else
+        {
+            tail->next = newnode;
+            tail = tail->next;
+        }
+        printf("Enter data: \n");
+        scanf("%d", &da);
+    }
+    return head;
+}
+void traversi(node *trav)
 {
   while(trav != NULL)
   {
@@ -16,9 +36,9 @@ void traversi(struct link *trav)
   }
 }
                 //CASE 1
-struct link * insertatbeg(struct link *head,int data)
+node * insertatbeg(node *head,int data)
 {
-   struct link *fifth = (struct link *)malloc(sizeof(struct link));
+     node *fifth = (node *)malloc(sizeof(node));
      fifth->info = data;
      fifth->next = head ;
      head = fifth;
@@ -26,9 +46,9 @@ struct link * insertatbeg(struct link *head,int data)
 
 }
                 //CASE 2
-struct link * insertinbet(struct link *head,int i,int data)
+node * insertinbet(node *head,int i,int data)
 {
-   struct link *newnode = (struct link *)malloc(sizeof(struct link));
+   node *newnode = (node *)malloc(sizeof(node));
    newnode -> info = data;
    if(i == 0)
    {
@@ -36,7 +56,7 @@ struct link * insertinbet(struct link *head,int i,int data)
      head = newnode;
      return head;
    }
-   struct link *temp = head;
+   node *temp = head;
    int count = 0;
    while(temp -> next != NULL && count < i-1)  
     { 
@@ -52,12 +72,12 @@ struct link * insertinbet(struct link *head,int i,int data)
 }
 
                //CASE 3
-struct link * insertatend(struct link *first,int data)
+node * insertatend(node *first,int data)
 {
-     struct link *newnode = (struct link *)malloc(sizeof(struct link));
+     node *newnode = (node *)malloc(sizeof(node));
      newnode -> info = data; 
 
-     struct link *ptr = first;
+     node *ptr = first;
      
      while (ptr->next != NULL)
      {
@@ -69,29 +89,11 @@ struct link * insertatend(struct link *first,int data)
 }
 
 int main(){
-    struct link *first;
-    struct link *second;
-    struct link *third;
-    struct link *fourth;
-
-    //memory allocation of pointer variables in heap
-    first = (struct link *)malloc(sizeof(struct link));
-    second = (struct link *)malloc(sizeof(struct link));
-    third = (struct link *)malloc(sizeof(struct link));
-    fourth = (struct link *)malloc(sizeof(struct link));
+    node *first = NULL;
+    node *second =NULL;
     
-    //CREATION OF A LINKED LIST
-    first->info = 22;
-    first->next = second;
-
-    second->info = 33;
-    second->next = third;
-
-    third->info = 44;
-    third->next = fourth;
-
-    fourth->info = 55;
-    fourth->next = NULL;
+   first = takeinput(first ,second);
+    
     
     first = insertatbeg(first,11);
     printf("\n");
