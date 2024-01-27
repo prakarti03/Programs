@@ -8,7 +8,7 @@ class alpha
     public:
     alpha(int i){
         x = i;
-        showx();
+
     }
     void showx(){
         cout<<"x is:"<<x<<endl;
@@ -21,7 +21,6 @@ class beta
     beta(int i)
     {
         y = i;
-        showy();
     }
     void showy(){
          cout<<"y is:"<<y<<endl;
@@ -43,5 +42,7 @@ class gamma: public alpha,public beta
 int main(){
     gamma g1(2,3,5,6);
     g1.show();
+    g1.showx();
+    g1.showy();
     return 0 ;
 }
