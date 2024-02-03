@@ -57,7 +57,7 @@ void dequeue()
     }
     else
     {
-    node *temp = (node *)malloc(sizeof(node));
+    node *temp;
     temp = front;
     front = front->next;
     size--;
