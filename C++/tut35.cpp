@@ -37,7 +37,7 @@ public:
 int main()
 {
     derived dr;
-    // dr.getinput(10,30);
+    //dr.getinput(10,30); WILL NOT WORK SINCE GETINPUT() IS DECLARED PRIVATE
     dr.process();
     dr.display();
 
