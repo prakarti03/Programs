@@ -3,7 +3,7 @@
 
 int arr[capacity];
 int front = -1;
-int rear = 0;
+int rear = -1;
 int size = 0;
 
 void sizee()
@@ -19,15 +19,16 @@ int enqueue()
 
     for (int i = 0; i < n; i++)
     {
-      if (size==capacity)
+      if (size == capacity)
     {
         printf("QUEUE OVERFLOW.\n");
         return 0;
     }
     printf("Enter element:\n");
     scanf("%d",&insert);
-    arr[rear] = insert;
     rear = (rear +1) % capacity;
+    arr[rear] = insert;
+  
     if(front ==  -1)
     {
         front = 0;
@@ -40,7 +41,7 @@ void dequeue(){
     {
         printf("QUEUE UNDERFLOW.\n");
         front = -1;
-        rear = 0;
+        rear = -1;
     }
     else
     {
