@@ -47,13 +47,20 @@ class scientific_cal
 };
 class hybrid_cal : public simple_cal , public scientific_cal
 {
-   
+   public:
+   //derived class display will OVERRIDE the base class display function here 
+   void display()
+   {
+    cout<<"THIS IS DERIVED CLASS FUNCTION.\n";
+   }
 };
 int main(){
    hybrid_cal H;
-   H.simple_cal::utility();
+   H.simple_cal::utility();  //Ambiguity Resolution
    H.simple_cal::display();
    H.scientific_cal::utility();
    H.scientific_cal::display();
+
+   H.display(); //FUNCTION OVERERIDING
     return 0 ;
 }
