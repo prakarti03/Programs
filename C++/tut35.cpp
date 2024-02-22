@@ -34,12 +34,34 @@ public:
         cout << "the value of data3 is: " << data3 << endl;
     }
 };
+class derived2 : public base
+{
+    int data3;
+    public:
+        void process()
+        {
+            data3 = data2 *getdata1();
+        }
+        void display()
+        {
+            cout<<"the value of data1 is: "<<getdata1()<<endl;
+            cout<<"the value of data2 is: "<<data2<<endl;
+            cout<<"the value of data3 is: "<<data3<<endl;
+
+        }
+};
 int main()
 {
     derived dr;
     //dr.getinput(10,30); WILL NOT WORK SINCE GETINPUT() IS DECLARED PRIVATE
     dr.process();
     dr.display();
+
+    cout<<"\nPublic visiblity mode:\n";
+    derived2 d;
+    d.getinput(20,40);
+    d.process();
+    d.display();
 
     return 0;
 }

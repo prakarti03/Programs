@@ -1,3 +1,4 @@
+//Virtual function
 #include <iostream>
 using namespace std;
 
@@ -6,7 +7,7 @@ class Base
 public:
     int b1;
     virtual void display()
-    //void display()
+      //void display()
     {
         cout << "1 Base class variable value is: " << b1 << endl;
     }
@@ -38,7 +39,8 @@ int main()
     der->d1 = 45;
     der -> display();
    //TO SOLVE THIS ERROR WE USE VIRTUAL KEYWORD
-   cout<<"\nVIRTUAL KEYWORD USED :\n";
+   cout<<"\nVIRTUAL KEYWORD  FUNCTION USED :\n";
+    b = &obj1;
     b->display();
 
     return 0;

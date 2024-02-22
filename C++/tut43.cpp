@@ -1,4 +1,4 @@
-//HIERARCHIAL INHERITANCE
+//HIERARCHIAL INHERITANCE IN CLASSROOM
 #include<iostream>
 #include<string.h>
 using namespace std;
@@ -17,19 +17,21 @@ class student
    }
 
 };
-class engineering:public student{
+class engineering:virtual public student{
     char department[10];
     public:
       void getdept(char a[])
-      {
+      { 
+         getroll(23);
          strcpy(department, a);
       }
       void printdept()
       {
+         printroll();
         cout<<"Department name is: "<<department<<endl;
       }
 };
-class computer:public engineering{
+class computer:public virtual student,public engineering{
   int C,RDBMS,LOC;
   public:
      void getmarks(int a,int b,int c)
@@ -46,13 +48,10 @@ class computer:public engineering{
         cout<<"TOTAL marks is: "<<C+RDBMS+LOC<<endl;
      }
 };
-class mechanical:public engineering{
-
-};
 int main(){
     computer c1;
-    c1.getroll(5);
-    c1.printroll();
+   //  c1.getroll(5);
+   //  c1.printroll();
     c1.getdept("Computer");
     c1.printdept();
     c1.getmarks(45,90,78);
