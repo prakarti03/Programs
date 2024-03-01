@@ -30,7 +30,7 @@ int main(){
     test <> y(4,4.1);//using default parameters
     y.display();
     cout<<endl;
-    test <float ,char>t(98.99,'p');
+    test <float ,char>t(98.99,'p');//parameters specified
     t.display();
     return 0 ;
 }

@@ -5,20 +5,20 @@ using namespace std;
 class Student
 {
 protected:
-    int eng;
+    int rollno;
 
 public:
     void getmarks(int a)
     {
-        eng = a;
+        rollno = a;
     }
     void printdata()
     {
-        cout << "Your english marks is:" << eng << endl;
+        cout << "Your roll number is:" << rollno << endl;
     }
 };
 
-class Test : virtual public Student
+class Test : public Student
 {
 protected:
     float maths, loc;
@@ -36,19 +36,19 @@ public:
     }
 };
 
-class Sports : virtual public Student
+class Sports 
 {
 protected:
-    int football;
+    int score;
 
 public:
     void getruns(int r)
     {
-        football = r;
+        score = r;
     }
     void print_runs()
     {
-        cout << "Football runs is: " << football << endl;
+        cout << "Football runs is: " << score << endl;
     }
 };
 class Result : public Test, public Sports
@@ -58,7 +58,7 @@ protected:
 public:
     void display()
     {
-        total = eng+maths+loc;
+        total = maths+loc;
         printdata();
         print_marks();
         print_runs();
