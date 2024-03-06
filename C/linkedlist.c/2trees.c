@@ -52,7 +52,7 @@ node *search(int element, node *root)
     if (element = ptr->info)
     {
       loc = ptr;
-      par = save;
+      par = save; 
     }
     if (element < ptr->info)
     {

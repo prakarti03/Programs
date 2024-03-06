@@ -25,7 +25,7 @@ void preorder(node *root)
 {
   if(root == NULL)
   {
-    return;
+    return ;
   }
   else
   {
